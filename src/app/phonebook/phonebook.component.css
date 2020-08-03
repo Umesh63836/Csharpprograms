@@ -1,0 +1,49 @@
+h1{
+    text-align:center;
+    color: white;
+}
+h2{
+    text-align:left;
+    color: white;
+}
+h3{
+    color: white;
+}
+.add{
+    display: inline;
+}
+#list{
+    align-content: center;
+}
+h3{
+    /* text-align:center; */
+    margin-left: 410px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#list{
+    position: relative;
+
+}
+#parent {
+    display:inline;
+}
+/* #button { */
+    /* object-position: right; */
+    /* margin-left: 790px; */
+    /* flex: auto; */
+/* } */
+#mydiv{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+#mybutton{
+    margin-left: 760px;
+}
+#myd{
+    font-size: large;
+    color: white;
+}
+#sort{
+    margin-left: 300px;
+}
+

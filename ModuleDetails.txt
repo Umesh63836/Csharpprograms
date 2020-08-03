@@ -1,0 +1,2 @@
+In this application, i have used dialog module of angular by
+installing @angular/material using ng add @angular/material command

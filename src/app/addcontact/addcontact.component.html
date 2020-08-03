@@ -1,0 +1,44 @@
+<div>
+    <!-- <h4>Add Contact</h4>
+    <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+    <div class="modal-header">
+        <h3 class="modal-title">New Contact</h3>
+        <button type="button" (click)="close()" class="close" data-dismiss="modal">&times;</button>
+      </div>
+    <input type="text" class="form-control" [(ngModel)]="contact.firstname" placeholder="First name"><br>
+    <input type="text" class="form-control" [(ngModel)]="contact.lastname" placeholder="Last name"><br>
+    <input type="number" class="form-control" [(ngModel)]="contact.phoneno" placeholder="Phone number"><br>
+    <button class="btn btn-success" (click)="addContact()" style="margin:5px;">Add</button>
+    <button class="btn btn-danger" (click)="close()" style="margin:5px;">Cancel</button>
+</div>
+
+    <!-- <div class="row">
+      <div class="col">
+        
+        <input type="text" [(ngModel)]="contact.firstname" class="form-control" placeholder="First name">
+      </div>
+      <div class="col">
+        
+        <input type="text" [(ngModel)]="contact.lastname" class="form-control placeholder="Last name">
+      </div>
+      <div class="col">
+        
+        <input type="number" [(ngModel)]="contact.phoneno" class="form-control placeholder="Phone number">
+      </div>
+      <button (click)="addContact()">Add</button>
+    <button (click)="close()">Cancel</button>
+    </div>  -->
+    <!-- <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+          
+            
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            
+            <div class="modal-body">
+              Modal body..
+            </div> -->

@@ -1,0 +1,151 @@
+<h1><b><i class='fas fa-address-book' style='font-size:24px;'></i> PhoneBook App</b></h1>
+
+<div id="myd"><b>Contacts</b>
+
+<button id="mybutton" type="button" class="btn btn-primary btn-sm" (click)="openDialog()">+Add Contact</button><br><br>
+</div>
+
+    <!-- <input type="text" #search placeholder="Search"><button (click)="searchContact(search.value)"></button>
+    <div class="list-group" *ngFor="let cont of icontacts">
+        <a href="#" class="list-group-item active">cont.firstname cont.lastname</a>    
+    </div> -->
+<input type="text"  class="form-control" [(ngModel)]="search" placeholder="Search(FirstName or LastName or PhoneNumber)"><br><button class="btn btn-outline-success btn-sm" (click)="searchContact()">Search</button>
+    
+<!-- <div id="accordion">
+    <h3><b>Available Contacts</b></h3>
+    <div *ngIf="t;else elseBlock"> 
+        <p>ifworks</p>
+    </div>
+    <ng-template #elseBlock>  
+        <p>else works</p>
+        </ng-template> -->
+
+
+<!-- <div id="accordion">
+    <h3><b>Available Contacts</b></h3>
+    <div class="card" *ngFor="let cont of icontacts"> 
+        <div class="card-header">
+        <a class="card-link" data-toggle="collapse" href="#{{cont.firstname}}">
+            {{cont.firstname}} {{cont.lastname}}
+            <div id="parent">
+            <i id="button" (click)="deleteContact(cont)" class="material-icons" style="font-size:25px;color:red">delete</i>
+        </div>
+        </a>
+      </div>
+      <div id="{{cont.firstname}}" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+            <i class="material-icons">call</i>
+            {{cont.phoneno}}
+        </div>
+      </div>
+    </div>
+</div> -->
+
+<!-- <div id="list" class="container">
+    <h3>Available Contacts</h3>
+    <div class="panel-group" *ngFor="let cont of icontacts">
+      <div class="panel panel-default">
+        <div class="panel-heading">{{cont.firstname}} {{cont.lastname}}</div>
+        <div class="panel-body">{{cont.phoneno}}</div>
+      </div>
+    </div>
+</div> -->
+
+ <!-- <div class="card" *ngIf="input.value";else elseBlock> 
+       <div *ngFor="let cont of searches 
+    <ng-template #elseBlock>*ngFor="let cont of icontacts</ng-template>   
+    *ngFor="let cont of searches *ngFor="let cont of icontacts"> -->
+
+
+    <div id="accordion">
+    <h3><b>Available Contacts</b>
+      <div id="sort" class="btn-group">
+        <button type="button" class="btn btn-info btn-sm">Sort By</button>
+        <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)="sortContactsByFirstName()" href="#">FirstName</a>
+          <a class="dropdown-item" (click)="sortContactsByLastName()" href="#">LastName</a>
+          <a class="dropdown-item" (click)="sortContactsByPhoneNumber()" href="#">PhoneNumber</a>
+        </div>
+      </div></h3>
+    <div *ngIf="detect;else elseBlock"> 
+    <div class="card" *ngFor="let cont of searches"> 
+        <div id="mydiv" class="card-header">
+          <i id="button" (click)="deleteContact(cont)" class="material-icons" style="font-size:25px;color:red">delete</i>
+          
+            <a style="font-size: medium;font-style: normal;font-family:Arial, Helvetica, sans-serif;font-weight: bolder;" class="card-link" data-toggle="collapse" href="#{{cont.firstname}}{{cont.lastname}}">
+              &#160;&#160;&#160;{{cont.firstname}} {{cont.lastname}}
+                <div id="parent">
+                <!-- <i id="button" (click)="deleteContactFromSearches(cont)" class="material-icons" style=" font-size:25px;color:red">delete</i> -->
+            </div>
+            </a>
+          </div>
+          <div id="{{cont.firstname}}{{cont.lastname}}" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+                <i class="material-icons">call</i>
+                {{cont.phoneno}}
+            </div>
+          </div>
+        </div>
+        <div *ngIf="searches.length>0;else eblock">
+        <br><button class="btn btn-outline-light btn-sm" (click)="back()">Back</button></div>
+        <ng-template #eblock>
+            <div class="alert alert-danger">
+            <strong>Oops!</strong> No contact found!
+            </div><br><button class="btn btn-outline-light btn-sm" (click)="back()">Back</button>
+        </ng-template>
+    </div>
+
+<ng-template #elseBlock>
+    <div class="card" *ngFor="let cont of icontacts"> 
+        <div  class="card-header">
+          <i id="button" (click)="deleteContact(cont)" class="material-icons" style="font-size:25px;color:red">delete</i>
+          
+        <a style="font-size: medium;font-style: normal;font-family:Arial, Helvetica, sans-serif;font-weight: bolder;" class="card-link" data-toggle="collapse" href="#{{cont.firstname}}{{cont.lastname}}">
+          &#160;&#160;&#160;{{cont.firstname}} {{cont.lastname}}
+            <div id="parent">
+            <!-- <i id="button" (click)="deleteContact(cont)" class="material-icons" style="font-size:25px;color:red">delete</i> -->
+        </div>
+        </a>
+      </div>
+      <div id="{{cont.firstname}}{{cont.lastname}}" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+            <i class="material-icons">call</i>
+            {{cont.phoneno}}
+        </div>
+      </div>
+    </div>
+</ng-template>
+</div> 
+
+
+<!-- <div class="btn-group">
+  <button type="button" class="btn btn-info btn-sm">Sort By</button>
+  <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" (click)="sortContactsByFirstName()" href="#">FirstName</a>
+    <a class="dropdown-item" (click)="sortContactsByLastName()" href="#">LastName</a>
+    <a class="dropdown-item" (click)="sortContactsByPhoneNumber()" href="#">PhoneNumber</a>
+  </div>
+</div> -->
+<!-- <div *ngIf="!detect">
+<div class="card" *ngFor="let cont of icontacts"> 
+    <div class="card-header">
+    <a class="card-link" data-toggle="collapse" href="#{{cont.firstname}}">
+        {{cont.firstname}} {{cont.lastname}}
+        <div id="parent">
+        <i id="button" (click)="deleteContact(cont)" class="material-icons" style="font-size:25px;color:red">delete</i>
+    </div>
+    </a>
+  </div>
+  <div id="{{cont.firstname}}" class="collapse show" data-parent="#accordion">
+    <div class="card-body">
+        <i class="material-icons">call</i>
+        {{cont.phoneno}}
+    </div>
+  </div>
+</div>
+ <div clear()></div> 
+</div> -->
